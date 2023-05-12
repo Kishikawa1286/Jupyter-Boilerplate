@@ -1,14 +1,10 @@
 {
 	"name": "Ubuntu",
-	"image": "ubuntu:jammy",
+	"image": "jupyter/r-notebook:notebook-6.5.4",
 	"features": {
-		"ghcr.io/devcontainers/features/python:1": {},
-		"ghcr.io/eitsupi/devcontainer-features/julia:0": {},
-		"ghcr.io/devcontainers/features/git:1": {},
-		"ghcr.io/devcontainers/features/common-utils:2": {},
-		"ghcr.io/rocker-org/devcontainer-features/r-apt:0": {}
+		"ghcr.io/devcontainers/features/common-utils:2": {}
 	},
-	"postCreateCommand": "pip install openai python-dotenv regex",
+	"postCreateCommand": "Rscript -e \"install.packages('languageserver', repos='http://cran.us.r-project.org')\"",
 	"service": "texlive-ja",
 	"workspaceFolder": "/workspaces/Jupyter-Boilerplate",
 	"shutdownAction": "stopCompose",
@@ -16,9 +12,8 @@
 		"vscode": {
 			"extensions": [
 				"ms-python.python",
-				"marp-team.marp-vscode",
-				"tomoki1207.pdf",
-				"REditorSupport.r"
+				"REditorSupport.r",
+				"ms-toolsai.jupyter"
 			],
 			"settings": {
 				"terminal.integrated.shell": "/bin/bash",
@@ -34,7 +29,8 @@
 				"[python]": {
 					"editor.formatOnSave": true,
 					"editor.formatOnPaste": true
-				}
+				},
+				"jupyter.experiments.optOutFrom": ["NativeNotebookEditor"]
 			}
 		}
 	}
