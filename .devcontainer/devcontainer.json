@@ -10,7 +10,7 @@
 	},
 	"postCreateCommand": "pip install openai python-dotenv regex",
 	"service": "texlive-ja",
-	"workspaceFolder": "/workspaces/papers-2023",
+	"workspaceFolder": "/workspaces/Jupyter-Boilerplate",
 	"shutdownAction": "stopCompose",
 	"customizations": {
 		"vscode": {
