@@ -2,7 +2,8 @@
 	"name": "Ubuntu",
 	"image": "jupyter/r-notebook:notebook-6.5.4",
 	"features": {
-		"ghcr.io/devcontainers/features/common-utils:2": {}
+		"ghcr.io/devcontainers/features/common-utils:2": {},
+		"ghcr.io/eitsupi/devcontainer-features/julia:0": {}
 	},
 	"postCreateCommand": "Rscript -e \"install.packages('languageserver', repos='http://cran.us.r-project.org')\"",
 	"service": "texlive-ja",
@@ -13,7 +14,9 @@
 			"extensions": [
 				"ms-python.python",
 				"REditorSupport.r",
-				"ms-toolsai.jupyter"
+				"ms-toolsai.jupyter",
+				"ms-python.autopep8",
+				"julialang.language-julia"
 			],
 			"settings": {
 				"terminal.integrated.shell": "/bin/bash",
@@ -21,14 +24,10 @@
 					"source.organizeImports.python": true
 				},
 				"python.analysis.typeCheckingMode": "basic",
-				"python.formatting.provider": "autopep8",
-				"python.formatting.autopep8Args": [
-					"--max-line-length",
-					"80"
-				],
 				"[python]": {
 					"editor.formatOnSave": true,
-					"editor.formatOnPaste": true
+					"editor.formatOnPaste": true,
+					"editor.defaultFormatter": "ms-python.autopep8"
 				},
 				"jupyter.experiments.optOutFrom": ["NativeNotebookEditor"]
 			}
