@@ -1,0 +1,37 @@
+{
+	"name": "Ubuntu",
+	"image": "jupyter/r-notebook:notebook-6.5.4",
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {}
+	},
+	"postCreateCommand": "Rscript -e \"install.packages('languageserver', repos='http://cran.us.r-project.org')\"",
+	"service": "texlive-ja",
+	"workspaceFolder": "/workspaces/Jupyter-Boilerplate",
+	"shutdownAction": "stopCompose",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"REditorSupport.r",
+				"ms-toolsai.jupyter"
+			],
+			"settings": {
+				"terminal.integrated.shell": "/bin/bash",
+				"editor.codeActionsOnSave": {
+					"source.organizeImports.python": true
+				},
+				"python.analysis.typeCheckingMode": "basic",
+				"python.formatting.provider": "autopep8",
+				"python.formatting.autopep8Args": [
+					"--max-line-length",
+					"80"
+				],
+				"[python]": {
+					"editor.formatOnSave": true,
+					"editor.formatOnPaste": true
+				},
+				"jupyter.experiments.optOutFrom": ["NativeNotebookEditor"]
+			}
+		}
+	}
+}
