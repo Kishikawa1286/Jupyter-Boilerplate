@@ -7,7 +7,6 @@
 	},
 	"postCreateCommand": "Rscript -e \"install.packages('languageserver', repos='http://cran.us.r-project.org')\"",
 	"service": "texlive-ja",
-	"workspaceFolder": "/workspaces/Jupyter-Boilerplate",
 	"shutdownAction": "stopCompose",
 	"customizations": {
 		"vscode": {
